@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    float total;
+    printf("Enter initial total : ");
+    scanf("%f", &total);
+    char op;
+    int flag = 1;
+    while(flag){
+        printf("Enter operation (+,-,*,/,^) : ");
+        scanf(" %c", &op);
+        float num;
+        if(op=='^'){
+            printf("Enter  positive non-zero integer: ");
+        } else {
+            printf("Enter number : ");
+        }
+        scanf(" %f", &num);
+        switch(op){
+            case '+':
+            total += num;
+            break;
+            case '-':
+            total -= num;
+            break;
+            case '*':
+            total *= num;
+            break;
+            case '/':
+            total /= num;
+            break;
+            case '^':
+            printf("working\n");
+            for(int i; i<num; i++){
+                total *= num;
+            }
+            break;
+            default:
+            flag = 0;
+        }
+        printf("Total : %f \n", total);
+    }
+    return 0;
+}
