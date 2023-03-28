@@ -1,0 +1,27 @@
+-dereferencing a 2d array will give the address of the first 'row', which is also the adress of the first element of that row.
+both the adresses will be same just their type will be different.
+-in a 2d array if a pointer is pointing to a row (array) then (pointer+1) will point to the next row (array) and not the next element of the same row.
+-list is also of the type list*, an array of pointers.
+-char c[4] = "ABC"; will store the string as {A,B,C,\0}, size in memory = (size of string +1).
+\0 is a null character.
+-strlen(string) will return the true size of the string, that is, without \0.
+-strcpy(string2,string1) will copy the first string to second.
+-strcat(string1, string2) will concatenate string2 to string1 and store it in string1.
+-strcmp(string1, string2) will compare the two given strings based on the ASCII values of the characters.
+-"%s" is the place holder for string.
+-to take string input:
+char str[30];
+scanf("%S", name); <-- notice that no ampersent for name.
+everything after a blank space will be ignored.
+-to take the string input with blank spaces:
+fgets(string, sizeof(string), stdin);
+string[sizeof(string)-1]='\0'; <-- to replace the \n with \0 at the end of the string. when we press enter, fgets takes \n.
+-
+
+
+-malloc has a global scope by default
+-malloc is present in stdlib.h
+-memory allocated through malloc needs to be freed explicitly.
+-freeing a malloc doesnt deletes the memory, it just unallocates it, which means it can still be accessed later with some chances of getting a segmentation error. To avoid this, the malloc pointer variable needs to be set to NULL.
+-segmentation fault: "pointing to something that is not yours".
+-
